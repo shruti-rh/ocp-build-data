@@ -1,0 +1,22 @@
+content:
+  source:
+    dockerfile: Dockerfile
+    git:
+      branch:
+        target: release-{MAJOR}.{MINOR}
+      url: git@github.com:openshift-priv/dummy-rpa-test.git
+      web: https://github.com/openshift/dummy-rpa-test
+distgit:
+  branch: rhaos-{MAJOR}.{MINOR}-rhel-9
+  component: dummy-rpa-test-container
+delivery:
+  repo_name: dummy-rpa-test
+  delivery_repo_names:
+  - openshift4/dummy-rpa-test-rhel9
+for_payload: true
+from:
+  member: openshift-enterprise-base-rhel9
+name: openshift/dummy-rpa-test-rhel9
+payload_name: dummy-rpa-test
+owners:
+- sanekar@redhat.com
